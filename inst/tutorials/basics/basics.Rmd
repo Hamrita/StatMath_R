@@ -1,10 +1,10 @@
 ---
-title: "Basic Statistics"
+title: "Introduction R"
 tutorial:
-  id: "basics"
+  id: "Intro_R"
 output: learnr::tutorial
 runtime: shiny_prerendered
-description: Let's begin to practice our statistical skills by calculating basic statistics using R. 
+description: Pratiquons un peu le langage R. 
 ---
 
 ```{r setup, include=FALSE, mesage = F}
@@ -12,50 +12,26 @@ library(learnr)
 library(learnSTATS)
 data(basics_data)
 library(faux)
-
 basics_data <- sim_df(basics_data, 
                       sample(100:200, 1),
                       between = "where")
-
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Introduction to Basic Statistics
-
-In this example, we will expand your *R* skills into some basic level statistics. You will explore hypothesis testing, as well as calculate frequency distributions, z-scores, and more. The learning objectives include:
-
-- Introduction to data analytics
-- What is data analytics and the definition of predictive, descriptive and prescriptive analytics
-- Theories, hypothesis, and collecting data
-- What is the research process?
-- What are qualitative and quantitative data?
-- Identifying and measurement of variables
+## Introduction 
+Dans ce tutoriel, nous allons apprendre à pratiquer le langage *R*. Nous commençons par l'installation du logiciel *R* ainsi que *RStudio*
   
-## Introduction to Data Analytics
+### Installation
 
-The following videos are provided as a lecture for the class material. In this case, there is not a technical assignment for the Introduction to Data Analytics material. The lectures are provided here as part of the flow for the course. You can view the lecture notes within *R* using `vignette("Introduction-Data-Analytics", "learnSTATS")`. You can skip these pages if you are in class to go on to the assignment. 
+La video suivante, vous montre les étapes à suivre pour installer *R* et *RStudio* (environnement pour *R*).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NDVVTFUJtcA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=4ZhaB_kbTKc&list=PLVMtMDWXCQ364TxQxXdUZfyMmiXe9YIPH&index=3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Introduction to Data Analytics Video Part 2
+### Initiation au langage R
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/t3hE0uTTjVU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Afin d'apprendre les bases du langage *R* et savoir les différents types d'objets, nous vous conseillons de consulter le notebook suivant: ![](https://github.com/Hamrita/Statistique-Mathematique/blob/main/Initiation%20R/TP1_R.ipynb)
 
-## Introduction to Data Analytics Video Part 3
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z0B0ZPiEN_8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Basic Statistics Video Part 1
-
-These videos are part of the materials for this learnr assignment. You can view the lecture notes within *R* using `vignette("Basic-Stats-Concepts", "learnSTATS")`.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CqpsS5M9avk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Basic Statistics Video Part 2
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JiGRPh49H9A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Exercises
+## Exercices
 
 In this next section, you will answer questions using the *R* code blocks provided. Be sure to use the `solution` option to see the answer if you need it!
 
@@ -166,7 +142,6 @@ names(basics_data)
 Create a frequency table the places the jobs were outsources to using the `table()` function.
 
 ```{r freqtable, exercise = TRUE}
-
 ```
 
 ```{r freqtable-solution}
@@ -176,19 +151,16 @@ table(basics_data$where)
 Create histograms of the two types of cost savings using `hist()` and include the `breaks` argument to help create a readable histogram. Try `breaks = 15`. Note, there should be two histograms!
 
 ```{r histograms, exercise = TRUE}
-
 ```
 
 ```{r histograms-solution}
 hist(basics_data$cost, breaks = 15)
-
 hist(basics_data$cost2, breaks = 15)
 ```
 
 Calculate the skewness and kurtosis values for your cost savings using the `psych` library and the `describe()` function. Remember, you have to load the library first!
 
 ```{r skew, exercise = TRUE}
-
 ```
 
 ```{r skew-solution}
@@ -240,4 +212,3 @@ encoder_logic()
 ```{r encode, echo=FALSE}
 encoder_ui()
 ```
-
